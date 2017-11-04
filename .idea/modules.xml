@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/Cafe Simulator OS.iml" filepath="$PROJECT_DIR$/Cafe Simulator OS.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Cafe Simulator OS GUI.iml" filepath="$PROJECT_DIR$/Cafe Simulator OS GUI.iml" />
     </modules>
   </component>
 </project>

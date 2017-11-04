@@ -1,7 +1,6 @@
 import java.awt.*;
 import java.util.Random;
 
-
 public class Customer extends Thread {
     public String Name;
     public Table Table;
