@@ -3,5 +3,4 @@ public class Table {
     public Table(int ID) {
         this.ID = ID;
     }
-    public Customer Customer;
 }
