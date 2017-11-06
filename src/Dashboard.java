@@ -7,11 +7,6 @@ import java.awt.event.ActionListener;
 
 
 public class Dashboard extends JPanel {
-
-    private static final int SIZE = 75;
-    Restaurant ourResturant;
-    Dashboard dashboard;
-
     private JPanel Panel;
     private JTextField restaurantTextField;
     private JButton startSimulationButton;
@@ -19,13 +14,10 @@ public class Dashboard extends JPanel {
     private JSlider slider1;
     private JTextArea NamesField;
     private JLabel NLabel;
+    private Restaurant ourResturant;
+    private SimulationBoard SimulationBoard;
 
     public Dashboard(int N) {
-        super(new GridLayout((int) Math.sqrt(N), (int) Math.sqrt(N)));
-        this.setPreferredSize(new Dimension((int) Math.sqrt(N) * SIZE, (int) Math.sqrt(N) * SIZE));
-        for (int i = 0; i < N; i++) {
-            this.add(new ChessButton(i, N));
-        }
         slider1.addChangeListener(new ChangeListener() {
             @Override
             public void stateChanged(ChangeEvent e) {
@@ -41,9 +33,9 @@ public class Dashboard extends JPanel {
                 EventQueue.invokeLater(new Runnable() {
                     @Override
                     public void run() {
-                        dashboard = new Dashboard(slider1.getValue());
-                        dashboard.display(restaurantTextField.getText());
-                        ourResturant = new Restaurant(slider1.getValue(),restaurantTextField.getText(), dashboard);
+                        SimulationBoard = new SimulationBoard(slider1.getValue());
+                        SimulationBoard.display(restaurantTextField.getText());
+                        ourResturant = new Restaurant(slider1.getValue(),restaurantTextField.getText(), SimulationBoard);
                     }
                 });
             }
@@ -56,25 +48,6 @@ public class Dashboard extends JPanel {
         });
     }
 
-    public static class ChessButton extends JButton {
-        public ChessButton(int i, int N) {
-            super(i / N + "," + i % N);
-            this.setOpaque(true);
-            this.setBorderPainted(true);
-            this.setText(String.valueOf(i));
-        }
-    }
-
-    private void display(String Title) {
-        JFrame f = new JFrame(Title);
-        f.setMinimumSize(new Dimension(300,300));
-        f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        f.add(this);
-        f.pack();
-        f.setLocationRelativeTo(null);
-        f.setVisible(true);
-    }
-
     public static void main(String[] args) {
         EventQueue.invokeLater(new Runnable() {
             @Override
@@ -84,7 +57,6 @@ public class Dashboard extends JPanel {
                 jFrame.setDefaultCloseOperation(jFrame.EXIT_ON_CLOSE);
                 jFrame.pack();
                 jFrame.setVisible(true);
-                //new Dashboard().display();
             }
         });
     }

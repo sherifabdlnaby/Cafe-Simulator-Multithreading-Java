@@ -1,15 +1,16 @@
-import java.util.*;
+import java.util.LinkedList;
+import java.util.Queue;
 
 public class Restaurant {
     public String Name;
     public Queue<Customer> CustomersQueue;
     public Queue<Table> TablesQueue;
     //GUI-Simulation Board
-    public Dashboard Dashboard;
+    public SimulationBoard SimulationBoard;
 
-    public Restaurant(int size, String name, Dashboard dashboard) {
+    public Restaurant(int size, String name, SimulationBoard simulationBoard) {
         Name = name;
-        Dashboard = dashboard;
+        SimulationBoard = simulationBoard;
         TablesQueue = new LinkedList<>();
         CustomersQueue = new LinkedList<>();
         for (int id = 0; id < size; id++) {
@@ -21,7 +22,7 @@ public class Restaurant {
     public synchronized boolean enterRestaurant(Customer customer){
         CustomersQueue.add(customer);
         return true;
-    };
+    }
 
     public synchronized boolean occupyTable(Customer customer){
         if(!tableAvailable())
@@ -37,7 +38,7 @@ public class Restaurant {
         Table table = TablesQueue.poll();
         customer.Table = table;
         return true;
-    };
+    }
 
     public synchronized boolean leaveTable(Customer customer){
         //Put Table back to queue.
@@ -53,7 +54,7 @@ public class Restaurant {
             }
         }
         return true;
-    };
+    }
 
     public boolean tableAvailable(){
         return TablesQueue.size() > 0 && TablesQueue.peek() != null;    //in a test Queue had size but null elements.

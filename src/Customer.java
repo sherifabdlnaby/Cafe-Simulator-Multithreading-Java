@@ -42,9 +42,9 @@ public class Customer extends Thread {
         }
 
         //UI Elements Manipulation Variables
-        Dashboard.ChessButton Button;
+        SimulationBoard.ChessButton Button;
         int TableID = Table.ID;
-        Button = (Dashboard.ChessButton) Restaurant.Dashboard.getComponent(TableID);
+        Button = (SimulationBoard.ChessButton) Restaurant.SimulationBoard.getComponent(TableID);
 
         //GUI-Update
         Button.setBackground(Color.BLUE);
