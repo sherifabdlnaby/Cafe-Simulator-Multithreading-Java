@@ -6,3 +6,11 @@ A Java program that simulates a Cafe customers entering, waiting in queue, sitti
 ![Demo1](https://user-images.githubusercontent.com/16992394/33673278-068bbdaa-dab5-11e7-8bb1-c05ea962d7b3.gif)
 
 ![Demo2](https://user-images.githubusercontent.com/16992394/33673539-b02f4818-dab5-11e7-8ceb-03a4b9dd5216.gif)
+
+
+# Youtube Demo
+Click On Thumbnail
+
+<a href="http://www.youtube.com/watch?feature=player_embedded&v=xz-WpqvSx0w
+" target="_blank"><img src="http://img.youtube.com/vi/xz-WpqvSx0w/0.jpg" 
+alt="Youtube Demo Video" border="10" /></a>
